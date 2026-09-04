@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anas's Day 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --cream:      #faf7f4;
+      --offwhite:   #f5f0eb;
+      --sand:       #e8ddd4;
+      --mist:       #d4c4b8;
+      --warm-gray:  #a08878;
+      --taupe:      #7a5a50;
+      --cocoa:      #6b2d3e;
+      --espresso:   #4a1628;
+      --blush:      #e8c5c5;
+      --dusty-rose: #c47a7a;
+      --terracotta: #8b2252;
+      --gold:       #9e3060;
+      --gold-light: #c0506e;
+      --sage:       #a06080;
+      --font-display: 'DM Serif Display', serif;
+      --font-body:    'Cormorant Garamond', serif;
+      --font-sans:    'Lato', sans-serif;
+      --radius:     20px;
+      --shadow-soft: 0 8px 40px rgba(74,22,40,0.10);
+      --shadow-card: 0 4px 24px rgba(74,22,40,0.13);
+      --transition: 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--espresso);
+      overflow-x: hidden;
+    }
+
+    /* ─── PAGES ─── */
+    .page {
+      display: none;
+      min-height: 100vh;
+      animation: fadeIn 0.7s ease forwards;
+    }
+    .page.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══════════════════════════════════════
+       PAGE 1 — INDEX
+    ═══════════════════════════════════════ */
+    #page-index {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 30%, #f0d0d8aa 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 80%, #e8c0cc88 0%, transparent 70%),
+        var(--cream);
+      position: relative;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    #page-index.active { display: flex; }
+
+    .index-ornament {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .index-ornament::before,
+    .index-ornament::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+    .index-ornament::before {
+      width: 500px; height: 500px;
+      top: -150px; right: -150px;
+      background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+    }
+    .index-ornament::after {
+      width: 400px; height: 400px;
+      bottom: -120px; left: -100px;
+      background: radial-gradient(circle, var(--dusty-rose) 0%, transparent 70%);
+    }
+
+    .index-content {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+    }
+
+    .index-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .index-eyebrow::before,
+    .index-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .index-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--espresso);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+    .index-title em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .index-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: var(--taupe);
+      font-style: italic;
+      margin-bottom: 50px;
+      font-weight: 300;
+    }
+
+    .index-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 44px;
+      background: var(--espresso);
+      color: var(--cream);
+      border: none;
+      border-radius: 60px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 8px 30px rgba(74,22,40,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .index-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .index-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(74,22,40,0.3);
+    }
+    .index-btn:hover::after { opacity: 0.15; }
+
+    .btn-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+    }
+    .index-btn:hover .btn-arrow { transform: translateX(-4px); }
+
+    .index-petal {
+      position: absolute;
+      font-size: 1.8rem;
+      opacity: 0.25;
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    /* ═══════════════════════════════════════
+       PAGE 2 — COUNTDOWN
+    ═══════════════════════════════════════ */
+    #page-countdown {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse 70% 50% at 30% 20%, #e8b8c888 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 80% 80%, #f0d0d855 0%, transparent 65%),
+        var(--offwhite);
+    }
+    #page-countdown.active { display: flex; }
+
+    .countdown-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .countdown-grid {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin: 10px 0 44px;
+      width: 100%;
+    }
+
+    .countdown-box {
+      background: #fff;
+      border: 1.5px solid var(--sand);
+      border-radius: 16px;
+      padding: 20px 22px;
+      flex: 1 1 76px;
+      min-width: 0;
+      max-width: 110px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .countdown-num {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      color: var(--espresso);
+      line-height: 1;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+
+    .countdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--gold-light), var(--terracotta));
+      color: #fff;
+      border: none;
+      border-radius: 60px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      box-shadow: 0 10px 34px rgba(139,34,82,0.35);
+      transition: var(--transition);
+    }
+    .countdown-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 44px rgba(139,34,82,0.42);
+    }
+
+    .countdown-hint {
+      margin-top: 18px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 480px) {
+      .countdown-grid { gap: 8px; }
+      .countdown-box { padding: 12px 6px; border-radius: 12px; }
+      .countdown-num { font-size: 1.3rem; }
+      .countdown-label { font-size: 0.56rem; letter-spacing: 0.1em; margin-top: 6px; }
+    }
+
+    @media (max-width: 360px) {
+      .countdown-grid { gap: 6px; }
+      .countdown-box { padding: 10px 4px; }
+      .countdown-num { font-size: 1.1rem; }
+    }
+
+    /* ═══════════════════════════════════════
+       PAGE — QUIZ (بين الكاونتر والجاليري)
+    ═══════════════════════════════════════ */
+    #page-quiz {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse 70% 50% at 70% 20%, #e8b8c888 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 20% 80%, #f0d0d855 0%, transparent 65%),
+        var(--offwhite);
+    }
+    #page-quiz.active { display: flex; }
+
+    .quiz-content {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .quiz-progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .quiz-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mist);
+      transition: var(--transition);
+    }
+    .quiz-dot.done { background: var(--terracotta); }
+    .quiz-dot.current { background: var(--gold); transform: scale(1.3); }
+
+    .quiz-card {
+      background: #fff;
+      border: 1.5px solid var(--sand);
+      border-radius: var(--radius);
+      padding: 40px 30px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .quiz-question {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      color: var(--espresso);
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .quiz-option {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      padding: 15px 22px;
+      border-radius: 50px;
+      border: 1.5px solid var(--sand);
+      background: var(--cream);
+      color: var(--espresso);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quiz-option:hover {
+      border-color: var(--gold);
+      background: var(--offwhite);
+      transform: translateY(-2px);
+    }
+    .quiz-option.correct {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: #fff;
+    }
+    .quiz-option.wrong {
+      background: var(--espresso);
+      border-color: var(--espresso);
+      color: #fff;
+      animation: shake 0.4s;
+    }
+    .quiz-option:disabled { cursor: default; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    .quiz-feedback {
+      margin-top: 22px;
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-style: italic;
+      min-height: 30px;
+    }
+    .quiz-feedback.wrong-text { color: var(--terracotta); font-weight: 600; }
+    .quiz-feedback.correct-text { color: var(--sage); }
+
+    .quiz-next-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      margin: 24px auto 0;
+      padding: 14px 38px;
+      background: linear-gradient(135deg, var(--gold-light), var(--terracotta));
+      color: #fff;
+      border: none;
+      border-radius: 60px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      box-shadow: 0 10px 34px rgba(139,34,82,0.35);
+      transition: var(--transition);
+    }
+    .quiz-next-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 44px rgba(139,34,82,0.42);
+    }
+    .quiz-next-btn.show { display: inline-flex; }
+
+    /* ═══════════════════════════════════════
+       PAGE NAV BUTTON WRAPPER
+    ═══════════════════════════════════════ */
+    .page-nav {
+      text-align: center;
+      padding: 10px 20px 90px;
+    }
+
+    /* ═══════════════════════════════════════
+       PAGES 3-5 — GALLERY / LETTER / VIDEO
+    ═══════════════════════════════════════ */
+    #page-gallery, #page-letter, #page-video {
+      display: none;
+      background: var(--cream);
+    }
+    #page-gallery.active, #page-letter.active, #page-video.active { display: block; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 70px;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% 40%, #e8b8c8cc 0%, transparent 65%),
+        linear-gradient(160deg, #edf0f7 0%, #d8e0ee 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, var(--mist) 1px, transparent 0);
+      background-size: 36px 36px;
+      opacity: 0.25;
+    }
+
+    .hero-tag {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 9vw, 6rem);
+      color: var(--espresso);
+      line-height: 1.05;
+      font-weight: 400;
+      position: relative;
+    }
+    .hero-title em {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+
+    .hero-confetti-btn {
+      margin-top: 36px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      border: 2px solid var(--espresso);
+      background: transparent;
+      color: var(--espresso);
+      border-radius: 60px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .hero-confetti-btn:hover {
+      background: var(--espresso);
+      color: var(--cream);
+      transform: scale(1.05);
+    }
+
+    /* Gallery */
+    .section-header {
+      text-align: center;
+      padding: 70px 24px 44px;
+    }
+    .section-header .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      color: var(--espresso);
+      font-weight: 400;
+    }
+    .section-header h2 em { color: var(--terracotta); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      padding: 0 clamp(18px, 5vw, 60px) 70px;
+    }
+
+    .photo-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid var(--sand);
+      position: relative;
+    }
+    .photo-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(74,22,40,0.18);
+    }
+
+    .photo-card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: var(--sand);
+    }
+
+    .photo-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .photo-card:hover .photo-card-overlay { opacity: 1; }
+
+    /* Letter section */
+    .letter-section {
+      padding: 70px clamp(18px, 8vw, 100px);
+      background: linear-gradient(135deg, #e8edf7, #d6dcea);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-section::before {
+      content: '❝';
+      position: absolute;
+      top: 30px;
+      left: clamp(18px, 5vw, 60px);
+      font-size: clamp(80px, 15vw, 160px);
+      color: var(--mist);
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .letter-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .letter-tag {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .letter-name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 4rem);
+      color: var(--espresso);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    .letter-name em { color: var(--terracotta); font-style: italic; }
+
+    .letter-body {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 2.2vw, 1.22rem);
+      line-height: 1.9;
+      color: var(--cocoa);
+      font-weight: 300;
+    }
+
+    .letter-signature {
+      margin-top: 40px;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .letter-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--terracotta));
+      border: none;
+      margin: 24px 0;
+    }
+
+    /* Video section */
+    .video-section {
+      padding: 70px clamp(18px, 5vw, 60px) 90px;
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .video-wrapper {
+      margin-top: 36px;
+      display: inline-block;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(74,22,40,0.20);
+      max-width: 260px;
+      width: 100%;
+      border: 3px solid #fff;
+      outline: 1px solid var(--sand);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      background: var(--sand);
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--warm-gray);
+      border-top: 1px solid var(--sand);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 0 14px 50px;
+      }
+      .letter-section {
+        padding: 50px 18px;
+      }
+      .hero { min-height: 340px; padding: 60px 18px 50px; }
+      .video-wrapper { max-width: 100%; }
+    }
+
+    @media (min-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═════════════════════════════════════
+       PAGE 1: INDEX
+  ═════════════════════════════════════ -->
+  <section id="page-index" class="page active">
+    <div class="index-ornament"></div>
+
+    <!-- floating petals -->
+    <span class="index-petal" style="top:12%;left:8%;animation-delay:0s">🌸</span>
+    <span class="index-petal" style="top:70%;left:5%;animation-delay:1.5s;font-size:1.2rem">✿</span>
+    <span class="index-petal" style="top:20%;right:10%;animation-delay:0.8s">🌷</span>
+    <span class="index-petal" style="bottom:15%;right:7%;animation-delay:2.2s;font-size:1.3rem">🌸</span>
+    <span class="index-petal" style="bottom:28%;left:15%;animation-delay:3s;font-size:1rem">✿</span>
+
+    <div class="index-content">
+      <div class="index-eyebrow">a special day</div>
+      <h1 class="index-title">
+        Today is<br><em>Anas's</em><br>Birthday
+      </h1>
+      <p class="index-subtitle">Let the celebration begin ✨</p>
+      <button class="index-btn" onclick="showPage('page-countdown')">
+        <span>ابدأ العد التنازلي</span>
+        <span class="btn-arrow">←</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════
+       PAGE 2: COUNTDOWN
+  ═════════════════════════════════════ -->
+  <section id="page-countdown" class="page">
+    <div class="index-ornament"></div>
+    <div class="countdown-content">
+      <div class="index-eyebrow">✦ Countdown to the Surprise ✦</div>
+      <h1 class="index-title">Happy Birthday<br><em>Anas</em></h1>
+      <p class="index-subtitle">A little surprise is waiting for the most amazing man. 💛</p>
+
+      <div class="countdown-grid">
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-minutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-seconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <button class="countdown-btn" onclick="showPage('page-quiz')">
+        <span>✨</span> Open Your Surprise
+      </button>
+      <p class="countdown-hint" id="cd-hint">⏳ Your surprise is almost ready…</p>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════
+       PAGE: QUIZ
+  ═════════════════════════════════════ -->
+  <section id="page-quiz" class="page">
+    <div class="index-ornament"></div>
+    <div class="quiz-content">
+      <div class="index-eyebrow">✦ قبل ما تدخل ✦</div>
+      <div class="quiz-progress" id="quiz-progress"></div>
+      <div class="quiz-card">
+        <p class="quiz-question" id="quiz-question"></p>
+        <div class="quiz-options" id="quiz-options"></div>
+        <p class="quiz-feedback" id="quiz-feedback"></p>
+        <button class="quiz-next-btn" id="quiz-next-btn" type="button">
+          <span id="quiz-next-label">التالي</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════
+       PAGE 3: GALLERY
+  ═════════════════════════════════════ -->
+  <section id="page-gallery" class="page">
+
+    <div class="hero">
+      <div class="hero-tag">✦ a celebration ✦</div>
+      <h1 class="hero-title">Let's Celebrate<br><em>Anas!</em> 🎂</h1>
+      <button class="hero-confetti-btn" onclick="fireConfetti()">
+        <span>🎊</span> Celebrate!
+      </button>
+    </div>
+
+    <div class="section-header">
+      <p class="eyebrow">✦ memories ✦</p>
+      <h2>Our <em>Beautiful</em> Moments</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="photo-card">
+        <img class="photo-card-img" src="photo1.jpg" alt="pic 1" loading="lazy" />
+        <div class="photo-card-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img class="photo-card-img" src="photo2.jpg" alt="pic 2" loading="lazy" />
+        <div class="photo-card-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img class="photo-card-img" src="photo3.jpg" alt="pic 3" loading="lazy" />
+        <div class="photo-card-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img class="photo-card-img" src="photo4.jpg" alt="pic 4" loading="lazy" />
+        <div class="photo-card-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img class="photo-card-img" src="photo5.jpg" alt="pic 5" loading="lazy" />
+        <div class="photo-card-overlay"></div>
+      </div>
+      <div class="photo-card">
+        <img class="photo-card-img" src="photo6.jpg" alt="pic 6" loading="lazy" />
+        <div class="photo-card-overlay"></div>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <button class="index-btn" onclick="showPage('page-letter')">
+        <span>Next</span>
+        <span class="btn-arrow">←</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════
+       PAGE 4: LETTER
+  ═════════════════════════════════════ -->
+  <section id="page-letter" class="page">
+    <div class="letter-section">
+      <div class="letter-inner" dir="ltr" style="text-align:left;">
+        <p class="letter-tag">✦ From the Heart ✦</p>
+        <h2 class="letter-name">My <em>Anas</em></h2>
+        <hr class="letter-divider" />
+
+        <p class="letter-body">Meeting you was like listening to a song for the first time and knowing it would be my favorite forever. You are my safe place, my happiest thought, and the piece of my heart that was always missing. Thank you for being my love and my best friend.</p>
+
+        <p class="letter-body" style="margin-top:22px;">Sometimes I look at you and I just wonder how I got so lucky to have you. You are the reason behind my brightest smiles and the warmth in my heart. No matter where life takes us, my heart will always beat for you.</p>
+
+        <p class="letter-body" style="margin-top:22px; font-style:italic;">Happy birthday to the most beautiful man ever. ❤</p>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <button class="index-btn" onclick="showPage('page-video')">
+        <span>Next</span>
+        <span class="btn-arrow">←</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════
+       PAGE 5: VIDEO + FOOTER
+  ═════════════════════════════════════ -->
+  <section id="page-video" class="page">
+    <div class="video-section">
+      <div class="section-header" style="padding-top:60px">
+        <p class="eyebrow">✦ a message ✦</p>
+        <h2>Watch <em>This</em> 🎬</h2>
+      </div>
+      <div class="video-wrapper">
+        <video controls loop playsinline preload="metadata" poster="back.jpg">
+          <source src="koky.MOV" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="page-nav" style="padding-top:0;">
+      <button class="index-btn" onclick="showPage('page-index')">
+        <span>Back to Start</span>
+        <span class="btn-arrow">←</span>
+      </button>
+    </div>
+
+    <div class="footer">Made with ❤ · Anas's Day · 2026</div>
+  </section>
+
+  <!-- ═════════════════════════════════════
+       SCRIPTS
+  ═════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    /* Page navigation */
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    /* Confetti */
+    function fireConfetti() {
+      confetti({ particleCount: 220, spread: 170, origin: { y: 0.55 },
+        colors: ['#c9a96e','#e8c5b8','#b57460','#9aab96','#e2c98a'] });
+      setTimeout(() =>
+        confetti({ particleCount: 80, angle: 60, spread: 60, origin: { x: 0, y: 0.7 } }), 300);
+      setTimeout(() =>
+        confetti({ particleCount: 80, angle: 120, spread: 60, origin: { x: 1, y: 0.7 } }), 450);
+    }
+
+    /* Countdown to the surprise — 30/8/2026 */
+    (function () {
+      const target = new Date('2026-08-30T00:00:00');
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        const now = new Date();
+        let diff = target - now;
+        const hint = document.getElementById('cd-hint');
+
+        if (diff <= 0) {
+          diff = 0;
+          if (hint) hint.textContent = "🎉 It's here! Happy Birthday!";
+        }
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        document.getElementById('cd-days').textContent = pad(d);
+        document.getElementById('cd-hours').textContent = pad(h);
+        document.getElementById('cd-minutes').textContent = pad(m);
+        document.getElementById('cd-seconds').textContent = pad(s);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    /* Quiz before the surprise */
+    (function () {
+      const questions = [
+        {
+          q: "بتحبني انا اكتر ولا احمد جعفر؟",
+          options: ["انا", "احمد جعفر", "الاتنين"],
+          correct: 0,
+          wrong: "احسسسسن لييييكككك😡"
+        },
+        {
+          q: "لو جيت يوم وقلت ليك تعبانه وم قادره اعمل اكل حتعمل شنو؟",
+          options: [
+            "حتقول لي انا جعان قومي سوي اكل",
+            "حتقول لي ارتاحي انا حجيب اكل جاهز",
+            "حتمشي تاكل عند امك"
+          ],
+          correct: 1,
+          wrong: "ما حطبخ للابد😏"
+        },
+        {
+          q: "حتعرسني متين؟",
+          options: ["شهر 11", "شهر 12", "شهر 1"],
+          correct: 1,
+          wrong: "انت طالق🫣"
+        }
+      ];
+
+      let current = 0;
+
+      const progressEl = document.getElementById('quiz-progress');
+      const questionEl = document.getElementById('quiz-question');
+      const optionsEl = document.getElementById('quiz-options');
+      const feedbackEl = document.getElementById('quiz-feedback');
+      const nextBtn = document.getElementById('quiz-next-btn');
+      const nextLabel = document.getElementById('quiz-next-label');
+
+      function renderProgress() {
+        progressEl.innerHTML = '';
+        questions.forEach((_, i) => {
+          const dot = document.createElement('span');
+          dot.className = 'quiz-dot' + (i < current ? ' done' : i === current ? ' current' : '');
+          progressEl.appendChild(dot);
+        });
+      }
+
+      function renderQuestion() {
+        const item = questions[current];
+        questionEl.textContent = item.q;
+        feedbackEl.textContent = '';
+        feedbackEl.className = 'quiz-feedback';
+        nextBtn.classList.remove('show');
+        nextLabel.textContent = (current === questions.length - 1) ? 'كمل 💌' : 'التالي';
+        optionsEl.innerHTML = '';
+
+        item.options.forEach((opt, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'quiz-option';
+          btn.textContent = opt;
+          btn.addEventListener('click', () => handleAnswer(idx, btn));
+          optionsEl.appendChild(btn);
+        });
+
+        renderProgress();
+      }
+
+      function handleAnswer(idx, btn) {
+        const item = questions[current];
+        const allBtns = optionsEl.querySelectorAll('.quiz-option');
+        allBtns.forEach(b => (b.disabled = true));
+
+        if (idx === item.correct) {
+          btn.classList.add('correct');
+          feedbackEl.textContent = '💚 صح!';
+          feedbackEl.classList.add('correct-text');
+          nextBtn.classList.add('show');
+        } else {
+          btn.classList.add('wrong');
+          feedbackEl.textContent = item.wrong;
+          feedbackEl.classList.add('wrong-text');
+          setTimeout(() => {
+            allBtns.forEach(b => {
+              b.disabled = false;
+              b.classList.remove('wrong');
+            });
+            feedbackEl.textContent = '';
+            feedbackEl.className = 'quiz-feedback';
+          }, 1400);
+        }
+      }
+
+      nextBtn.addEventListener('click', () => {
+        if (current < questions.length - 1) {
+          current++;
+          renderQuestion();
+        } else {
+          showPage('page-gallery');
+          fireConfetti();
+        }
+      });
+
+      renderQuestion();
+    })();
+  </script>
+
+</body>
+</html>
